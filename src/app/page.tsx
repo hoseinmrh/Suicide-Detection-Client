@@ -92,12 +92,14 @@ export default function Home() {
                         speed={60}
                         style={{display: 'inline-block'}}
                         repeat={1}
-                        className={`${isMobile? "mb-8" : "mb-28"} text-center ${isMobile ? "text-lg" : "text-3xl"}`}
+                        className={`${isMobile? "mb-0" : "mb-28"} text-center ${isMobile ? "text-lg" : "text-3xl"}`}
                         cursor={false}
                     />
                 </div>
                 <textarea
-                    className="w-full py-1 pt-2 pl-2 rounded-lg bg-transparent text-2xl my-14 placeholder:opacity-40"
+                    className={`w-full py-1 pt-2 pl-2 ${isMobile ? "mt-0" : "my-14"} 
+                    rounded-lg bg-transparent text-2xl ${isMobile ? "my-5" : "my-14"}
+                     placeholder:opacity-40`}
                     ref={ref}
                     rows={4}
                     placeholder="Enter text here..."
