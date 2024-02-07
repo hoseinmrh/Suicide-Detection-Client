@@ -114,7 +114,8 @@ export default function Home() {
                 </section>
 
             </main>
-            <footer className={`text-center ${isMobile ? "text-sm" : "text-xl"} mt-4 mb-4`}>Made with ❤️ by <a className="text-cyan-400" target="_blank" href="https://github.com/hoseinmrh">Hosein</a> , <a className="text-cyan-400" target="_blank" href="https://github.com/pooriazln">Martin </a>
+            <footer className={`text-center ${isMobile ? "text-sm" : "text-xl"} mt-4 mb-4`}>Made with ❤️ by <a className="text-cyan-400" target="_blank" href="https://github.com/hoseinmrh">Hosein</a> ,
+                <a className="text-cyan-400" target="_blank" href="https://github.com/pooriazln">Martin </a>
                 & <a className="text-cyan-400" target="_blank" href="https://github.com/pooriyamb">Pooriya</a> ||
                 <Link href="about" className="ml-2 text-cyan-800">
                     Go to About Page
