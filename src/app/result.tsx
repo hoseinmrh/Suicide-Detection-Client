@@ -17,7 +17,7 @@ export const Result = ( {result,english_text,non_suicidal_rate,suicidal_rate, or
         <div>
             <TextAnimation text={result.toUpperCase()}/>
             <p className="text-xl mt-10 mb-6 text-center"><span className="text-gray-400">Your Input: </span>
-                {original_text} | <span className="text-gray-400">Language: </span>{lang} </p>
+                {original_text} , <span className="text-gray-400">Language: </span>{lang} </p>
             <PieChart suicidal_rate={suicidal_rate} non_suicidal_rate={non_suicidal_rate}/>
 
 
