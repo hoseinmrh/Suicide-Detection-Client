@@ -1,6 +1,5 @@
 "use client"
 
-import {TypeAnimation} from 'react-type-animation';
 import {ChangeEvent, useEffect, useRef, useState} from "react";
 import {IResult, Result} from "@/app/result";
 import { useMediaQuery } from 'react-responsive';
@@ -12,7 +11,6 @@ export default function Home() {
     const ref = useRef<HTMLTextAreaElement>(null);
     const [result, setResult] = useState<IResult | null>(null)
     const [scrollToResult, setScrollToResult] = useState(false);
-
     const DynamicTypeAnimation = dynamic(
         () => import('react-type-animation').then(module => module.TypeAnimation),
         { ssr: false }
@@ -53,7 +51,9 @@ export default function Home() {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json()
-                setResult(() => data)
+                const result_data : IResult = {...data, original_text: text}
+                setResult(() => result_data)
+
                 setScrollToResult(true);
                 if (ref.current) {
                     ref.current.value = '';
@@ -65,7 +65,6 @@ export default function Home() {
                 // Handle error if needed
             });
     };
-
     useEffect(() => {
         if (scrollToResult) {
             // Scroll to the result section when scrollToResult is true
@@ -110,7 +109,7 @@ export default function Home() {
                         className="w-full text-2xl hover:bg-gray-300 bg-white text-black rounded-full p-5">Submit
                 </button>
                 <section id="result_section" className="w-full mt-2">
-                    {result && <Result {...result} />}
+                    {result && <Result {...result}/>}
                 </section>
 
             </main>

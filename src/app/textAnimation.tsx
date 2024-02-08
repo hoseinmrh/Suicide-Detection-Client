@@ -14,7 +14,7 @@ const TextAnimation = ({text}: ITextAnimationProps) => {
     }, []);
 
     return (
-        <h1 ref={textRef} className={`text-center text-4xl mt-12 ${text === "SUICIDE" ? "text-red-500" : "text-green-600"}`}>
+        <h1 ref={textRef} className={`text-center text-5xl mt-12 ${text === "SUICIDE" ? "text-red-500" : "text-green-600"}`}>
             {text}
         </h1>
     );
