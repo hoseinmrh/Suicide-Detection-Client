@@ -17,6 +17,8 @@ export const Result = ( {result,english_text,non_suicidal_rate,suicidal_rate}: I
             <TextAnimation text={result.toUpperCase()}/>
 
             <PieChart suicidal_rate={suicidal_rate} non_suicidal_rate={non_suicidal_rate}/>
+
+
         </div>
     </>
 }
