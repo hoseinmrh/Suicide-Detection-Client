@@ -79,46 +79,49 @@ export default function Home() {
 
 
     return (
-        <div className="container max-w-3xl m-auto">
-            <main className="flex flex-col items-center justify-between p-10">
-                <h1 className={`mb-20 mt-10 text-center ${isMobile ? "text-2xl" : "text-4xl"}`}>Suicide Detection from Text</h1>
-                <div className="w-full h-20 mb-20 relative">
-                    <DynamicTypeAnimation
-                        sequence={[
-                            'Enter your text in any language you want and then let\'s determine how suicidal it is!'
-                        ]}
-                        wrapper="span"
-                        speed={60}
-                        style={{display: 'inline-block'}}
-                        repeat={1}
-                        className={`${isMobile? "mb-0" : "mb-28"} text-center ${isMobile ? "text-lg" : "text-3xl"}`}
-                        cursor={false}
-                    />
-                </div>
-                <textarea
-                    className={`w-full py-1 pt-2 pl-2 ${isMobile ? "mt-0" : "my-14"} 
+        <div className="bg-black text-white h-screen">
+            <div className="container max-w-3xl m-auto">
+                <main className="flex flex-col items-center justify-between p-10">
+                    <h1 className={`mb-20 mt-10 text-center ${isMobile ? "text-2xl" : "text-4xl"}`}>Suicide Detection from Text</h1>
+                    <div className="w-full h-20 mb-20 relative">
+                        <DynamicTypeAnimation
+                            sequence={[
+                                'Enter your text in any language you want and then let\'s determine how suicidal it is!'
+                            ]}
+                            wrapper="span"
+                            speed={60}
+                            style={{display: 'inline-block'}}
+                            repeat={1}
+                            className={`${isMobile? "mb-0" : "mb-28"} text-center ${isMobile ? "text-lg" : "text-3xl"}`}
+                            cursor={false}
+                        />
+                    </div>
+                    <textarea
+                        className={`w-full py-1 pt-2 pl-2 ${isMobile ? "mt-0" : "my-14"} 
                     rounded-lg bg-transparent text-2xl ${isMobile ? "my-5" : "my-14"}
                      placeholder:opacity-40`}
-                    ref={ref}
-                    rows={4}
-                    placeholder="Enter text here..."
-                    onInput={handleInput}
-                />
+                        ref={ref}
+                        rows={4}
+                        placeholder="Enter text here..."
+                        onInput={handleInput}
+                    />
 
-                <button onClick={handleSubmit}
-                        className="w-full text-2xl hover:bg-gray-300 bg-white text-black rounded-full p-5">Submit
-                </button>
-                <section id="result_section" className="w-full mt-2">
-                    {result && <Result {...result}/>}
-                </section>
+                    <button onClick={handleSubmit}
+                            className="w-full text-2xl hover:bg-gray-300 bg-white text-black rounded-full p-5">Submit
+                    </button>
+                    <section id="result_section" className="w-full mt-2">
+                        {result && <Result {...result}/>}
+                    </section>
 
-            </main>
-            <footer className={`text-center ${isMobile ? "text-sm" : "text-xl"} mt-4 mb-4`}>Made with ❤️ by <a className="text-cyan-400" target="_blank" href="https://github.com/hoseinmrh">Hosein</a> ,
-                <a className="text-cyan-400" target="_blank" href="https://github.com/pooriazln">Martin </a>
-                & <a className="text-cyan-400" target="_blank" href="https://github.com/pooriyamb">Pooriya</a> ||
-                <Link href="about" className="ml-2 text-cyan-800">
-                    Go to About Page
-                </Link></footer>
+                </main>
+                <footer className={`text-center ${isMobile ? "text-sm" : "text-xl"} mt-4 mb-4`}>Made with ❤️ by <a className="text-cyan-400" target="_blank" href="https://github.com/hoseinmrh">Hosein</a> ,
+                    <a className="text-cyan-400" target="_blank" href="https://github.com/pooriazln">Martin </a>
+                    & <a className="text-cyan-400" target="_blank" href="https://github.com/pooriyamb">Pooriya</a> ||
+                    <Link href="about" className="ml-2 text-cyan-800">
+                        Go to About Page
+                    </Link></footer>
+            </div>
         </div>
+
     )
 }
